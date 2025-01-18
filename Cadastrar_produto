@@ -1,0 +1,26 @@
+import json
+
+
+
+
+def cadastrar_produto(lista):
+    nome_produto = input('Digite o nome do produto: ')
+    # if nome_produto == 'sair': 
+    #     break # comando para encerrar o loop
+    codigo_produto = input('Digite o codigo do produto: ')
+    preco = float(input('Digite o preço do produto: '))
+    qtd_estoque = (input('Digite a quatidade no estoque: '))
+
+    print('')
+    
+    #CRIAR UM DICIONARIO COM OS ITENS
+    produto = {
+    "nome": nome_produto,
+    "codigo": codigo_produto,
+    "preco": preco,
+    "qtd": qtd_estoque
+    }
+
+    lista.append(produto)
+    with open('banco.json', 'w') as file:
+        file.write(json.dumps({'dados':lista}, indent=4))

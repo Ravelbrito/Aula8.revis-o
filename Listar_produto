@@ -1,0 +1,4 @@
+def listar_produtos(lista):
+        for produto in lista:
+            print(produto)
+        print('')

@@ -1,0 +1,34 @@
+from cadastrar_produto import cadastrar_produto;
+from Listar_produto import listar_produtos;
+import json
+
+with open('banco.json','r') as file:
+    banco = json.load(file)
+
+lista = banco['dados']
+
+while True: #solicitar dados até algum momento
+
+    print('DIGITE O NUMERO CORRESPONDENTE A OPCAO DESEJADA')
+    print('1- CADASTRAR UM PRODUTO')
+    print('2- LISTAR PRODUTOS CADASTRADOS')
+    print('*- SAIR')
+    opcao = input('DIGITE A OPÇÃO: ')
+
+    if opcao == "1":
+        cadastrar_produto(lista)
+
+      
+        #como adicionar os inputs na lista:
+        #obs: deve-se ter uma linha de append ou o que for por cada input. não pode colocar em unico append
+        # lista.append(nome_produto)
+        # lista.append(codigo_produto)
+        # lista.append(preco)
+        # lista.append(qtd_estoque)
+
+    elif opcao == '2':
+        listar_produtos(lista)
+    elif opcao =='*':
+        break
+
+# print(lista)
